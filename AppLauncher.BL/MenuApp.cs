@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace AppLauncher.BL
 {
+    
+
     public class MenuApp
     {
         public object pnlOption;

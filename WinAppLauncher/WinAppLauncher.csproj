@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -78,6 +79,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppLauncher.BL\AppLauncher.BL.csproj">
+      <Project>{d4e5bc2f-a2c4-49fe-a6e5-407317e229f4}</Project>
+      <Name>AppLauncher.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppLauncher.CommonUI\AppLauncher.CommonUI.csproj">
+      <Project>{e2cac7b5-35ef-4c7d-9fc9-efa282b33377}</Project>
+      <Name>AppLauncher.CommonUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -104,6 +104,7 @@ namespace WinAppLauncher
             this.xmlTrv.Name = "xmlTrv";
             this.xmlTrv.Size = new System.Drawing.Size(252, 527);
             this.xmlTrv.TabIndex = 0;
+            this.xmlTrv.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.xmlTrv_AfterSelect);
             // 
             // FrmBuildMenu
             // 

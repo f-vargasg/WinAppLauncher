@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FactoryItemMenu.cs" />
     <Compile Include="ItemOption.cs" />
     <Compile Include="MenuApp.cs" />
     <Compile Include="MenuOption.cs" />
