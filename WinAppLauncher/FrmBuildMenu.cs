@@ -50,15 +50,28 @@ namespace WinAppLauncher
 
         private void xmlTrv_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            object tag = ((TreeNode)sender).Tag;
-            if (tag is ItemOption)
-            {
-                Console.WriteLine("soy un ItemOption");
-            }
-            else if (tag is MenuOption)
-            {
-                Console.WriteLine("soy un MenuOption");
-            }
+            object objNode = e.Node.Tag;
 
+            if (objNode is ItemOption)
+            {
+                ItemOption itemOption = (ItemOption) objNode  ;
+                if (itemOption.pnlOption == null)
+                {
+                    PnlItemOption pnlItemOption = new PnlItemOption();
+                    itemOption.pnlOption = pnlItemOption;
+
+                }
+                else
+                {
+
+                }
+                Console.WriteLine("soy un ItemOption Label: "  + ((ItemOption)objNode).Label );
+            }
+            else if (objNode is MenuOption)
+            {
+                Console.WriteLine("soy un MenuOption. Label: " + ((MenuOption)objNode).Label);
+            }
+           
+        }
     }
 }

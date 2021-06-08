@@ -47,61 +47,7 @@ namespace AppLauncher.CommonUI
                 case XmlNodeType.Element:
                     string scrap = "Prueba";
                     scrap = xmlNode.Name + (Convert.ToString(this.IdTreeNode++));
-                    res = new TreeNode();
-                    // process attributes
-                    if (xmlNode.Name.CompareTo("menu") == 0)
-                    {
-                        // mnuApp = new MenuOption(scrap, string.Empty);
-                        mnuApp = FactoryItemMenu.GetMenu(MenuTypes.enMenuOption );
-                        if (xmlNode.Attributes.Count > 0)
-                        {
-                            mnuApp.IdMenu = xmlNode.Attributes["id"].Value;
-                            mnuApp.Label = xmlNode.Attributes["label"].Value;
-
-                        }
-                        res.Name = mnuApp.IdMenu;
-                        res.Text = mnuApp.Label;
-                        res.Tag = mnuApp;
-                    }
-                    else
-                    {
-                        // itmOpt = new ItemOption(scrap, -1, string.Empty, string.Empty, string.Empty, "InvokerTest");
-                          mnuApp = FactoryItemMenu.GetMenu(MenuTypes.enItemOption);
-                        if (xmlNode.Attributes.Count > 0)
-                        {
-                            mnuApp.IdMenu= xmlNode.Attributes["id"].Value;
-                            mnuApp.Label = xmlNode.Attributes["label"].Value;
-                            //itmOpt.ClassNameStr = string.Empty;
-                            if (xmlNode.Attributes["assemblyFile"] != null)
-                            {
-                                ((ItemOption)mnuApp).AssemblyFile = xmlNode.Attributes["assemblyFile"].Value;
-                            }
-
-                            if (xmlNode.Attributes["class"] != null)
-                            {
-                                ((ItemOption)mnuApp).ClassName = xmlNode.Attributes["class"].Value;
-                            }
-                        }
-                        res.Name = ((ItemOption)mnuApp).IdMenu;
-                        res.Text = ((ItemOption)mnuApp).Label;
-                        res.Tag = mnuApp;
-                    }
-                    /*
-                    if (xmlNode.Attributes.Count > 0)
-                    {
-                        
-                        bool ft = true;
-                        for (int i = 0; i < xmlNode.Attributes.Count; i++)
-                        {
-                            
-                            scrap += ((!ft ? ", " : string.Empty) + xmlNode.Attributes[i].Name + "=" + xmlNode.Attributes[i].Value);
-                            ft = false;
-                        }
-                        
-                        scrap = " {" + scrap + "}";
-                        res.Text += scrap;
-                    }
-                    */
+                    MakeTreeNode(xmlNode, out mnuApp, out res);
                     break;
                 case XmlNodeType.EndElement:
                     break;
@@ -135,6 +81,49 @@ namespace AppLauncher.CommonUI
             }
 
             return res;
+        }
+
+        private static void MakeTreeNode(XmlNode xmlNode, out MenuApp mnuApp, out TreeNode res)
+        {
+            res = new TreeNode();
+            // process attributes
+            if (xmlNode.Name.CompareTo("menu") == 0)
+            {
+                // mnuApp = new MenuOption(scrap, string.Empty);
+                mnuApp = FactoryItemMenu.GetMenu(MenuTypes.enMenuOption);
+                if (xmlNode.Attributes.Count > 0)
+                {
+                    mnuApp.IdMenu = xmlNode.Attributes["id"].Value;
+                    mnuApp.Label = xmlNode.Attributes["label"].Value;
+
+                }
+                res.Name = mnuApp.IdMenu;
+                res.Text = mnuApp.Label;
+                res.Tag = mnuApp;
+            }
+            else
+            {
+                // itmOpt = new ItemOption(scrap, -1, string.Empty, string.Empty, string.Empty, "InvokerTest");
+                mnuApp = FactoryItemMenu.GetMenu(MenuTypes.enItemOption);
+                if (xmlNode.Attributes.Count > 0)
+                {
+                    mnuApp.IdMenu = xmlNode.Attributes["id"].Value;
+                    mnuApp.Label = xmlNode.Attributes["label"].Value;
+                    //itmOpt.ClassNameStr = string.Empty;
+                    if (xmlNode.Attributes["assemblyFile"] != null)
+                    {
+                        ((ItemOption)mnuApp).AssemblyFile = xmlNode.Attributes["assemblyFile"].Value;
+                    }
+
+                    if (xmlNode.Attributes["class"] != null)
+                    {
+                        ((ItemOption)mnuApp).ClassName = xmlNode.Attributes["class"].Value;
+                    }
+                }
+                res.Name = ((ItemOption)mnuApp).IdMenu;
+                res.Text = ((ItemOption)mnuApp).Label;
+                res.Tag = mnuApp;
+            }
         }
 
         private void LoadXmlToTree(TreeNode treeNode, XmlNodeList xmlNodeList)
