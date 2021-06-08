@@ -55,23 +55,41 @@ namespace WinAppLauncher
             if (objNode is ItemOption)
             {
                 ItemOption itemOption = (ItemOption) objNode  ;
-                if (itemOption.pnlOption == null)
+                if (itemOption.pnlOption == null)  // no está creado el objeto
                 {
                     PnlItemOption pnlItemOption = new PnlItemOption();
                     itemOption.pnlOption = pnlItemOption;
-
+                    itemOption.IdNumeric = splitContainer1.Panel2.Controls.Count;
+                    ((PnlItemOption)itemOption.pnlOption).BorderStyle = BorderStyle.None;
+                    ((PnlItemOption)itemOption.pnlOption).Dock = DockStyle.Fill;
                 }
                 else
                 {
 
                 }
+                splitContainer1.Panel2.Controls.Add((PnlItemOption)itemOption.pnlOption);
                 Console.WriteLine("soy un ItemOption Label: "  + ((ItemOption)objNode).Label );
             }
             else if (objNode is MenuOption)
             {
+                MenuOption menuOption = (MenuOption)objNode;
+                if (menuOption.pnlOption == null)
+                {
+                    PnlMenuOption pnlMenuOption = new PnlMenuOption();
+                    menuOption.pnlOption = pnlMenuOption;
+                    menuOption.IdNumeric = splitContainer1.Panel2.Controls.Count;
+                    ((PnlMenuOption)menuOption.pnlOption).BorderStyle = BorderStyle.None;
+                    ((PnlMenuOption)menuOption.pnlOption).Dock = DockStyle.Fill;
+                }
+                else
+                {
+
+                }
+
+                splitContainer1.Panel2.Controls.Add((PnlMenuOption)menuOption.pnlOption);
                 Console.WriteLine("soy un MenuOption. Label: " + ((MenuOption)objNode).Label);
             }
-           
+            
         }
     }
 }
