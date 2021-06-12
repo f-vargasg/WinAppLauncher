@@ -15,6 +15,9 @@ namespace AppLauncher.BL
         public string IdMenu { get; set; }
         public string Label { get; set; }
 
+        public bool Modified { get; set; }
+
+
 
         public MenuApp()
         {

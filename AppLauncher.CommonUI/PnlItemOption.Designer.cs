@@ -39,6 +39,7 @@ namespace AppLauncher.CommonUI
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.butReload = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtInvoker
@@ -121,10 +122,20 @@ namespace AppLauncher.CommonUI
             this.label1.TabIndex = 20;
             this.label1.Text = "Id";
             // 
+            // butReload
+            // 
+            this.butReload.Location = new System.Drawing.Point(12, 12);
+            this.butReload.Name = "butReload";
+            this.butReload.Size = new System.Drawing.Size(80, 31);
+            this.butReload.TabIndex = 30;
+            this.butReload.Text = "Reload Data";
+            this.butReload.UseVisualStyleBackColor = true;
+            // 
             // PnlItemOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.butReload);
             this.Controls.Add(this.txtInvoker);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtAssemblyFile);
@@ -154,5 +165,6 @@ namespace AppLauncher.CommonUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button butReload;
     }
 }

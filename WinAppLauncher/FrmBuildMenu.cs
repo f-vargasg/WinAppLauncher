@@ -17,7 +17,7 @@ namespace WinAppLauncher
     public partial class FrmBuildMenu : Form
     {
         TreeAppMenu treeAppMenu;
-        int idLastVisited;
+        object lastPnlVisited;
         public FrmBuildMenu()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace WinAppLauncher
             {
                 this.treeAppMenu = new TreeAppMenu(this.xmlTrv, archMenu);
                 this.treeAppMenu.LoadFileDefMenu();
-                this.idLastVisited = -1;
+                this.lastPnlVisited = null;
                 this.Text = ConfigurationManager.AppSettings["appCaption"] +
                              " (" + this.Name + ")";
             }
@@ -51,45 +51,59 @@ namespace WinAppLauncher
         private void xmlTrv_AfterSelect(object sender, TreeViewEventArgs e)
         {
             object objNode = e.Node.Tag;
-
+            PnlItemOption pnlItemOption;
+            PnlMenuOption pnlMenuOption;
+            MenuApp mnutmp = null;
             if (objNode is ItemOption)
             {
-                ItemOption itemOption = (ItemOption) objNode  ;
+                ItemOption itemOption = (ItemOption)objNode;
                 if (itemOption.pnlOption == null)  // no está creado el objeto
                 {
-                    PnlItemOption pnlItemOption = new PnlItemOption();
+                    pnlItemOption = new PnlItemOption();
                     itemOption.pnlOption = pnlItemOption;
-                    itemOption.IdNumeric = splitContainer1.Panel2.Controls.Count;
                     ((PnlItemOption)itemOption.pnlOption).BorderStyle = BorderStyle.None;
                     ((PnlItemOption)itemOption.pnlOption).Dock = DockStyle.Fill;
                 }
                 else
                 {
-
+                    pnlItemOption = (PnlItemOption)(itemOption.pnlOption);
                 }
+                mnutmp = itemOption;
                 splitContainer1.Panel2.Controls.Add((PnlItemOption)itemOption.pnlOption);
-                Console.WriteLine("soy un ItemOption Label: "  + ((ItemOption)objNode).Label );
+                Console.WriteLine("soy un ItemOption Label: " + ((ItemOption)objNode).Label);
             }
             else if (objNode is MenuOption)
             {
                 MenuOption menuOption = (MenuOption)objNode;
                 if (menuOption.pnlOption == null)
                 {
-                    PnlMenuOption pnlMenuOption = new PnlMenuOption();
+                    pnlMenuOption = new PnlMenuOption();
                     menuOption.pnlOption = pnlMenuOption;
-                    menuOption.IdNumeric = splitContainer1.Panel2.Controls.Count;
+                    // menuOption.IdNumeric = splitContainer1.Panel2.Controls.Count;
                     ((PnlMenuOption)menuOption.pnlOption).BorderStyle = BorderStyle.None;
                     ((PnlMenuOption)menuOption.pnlOption).Dock = DockStyle.Fill;
                 }
                 else
                 {
-
+                    pnlMenuOption = (PnlMenuOption)menuOption.pnlOption;
                 }
-
+                mnutmp = menuOption;
                 splitContainer1.Panel2.Controls.Add((PnlMenuOption)menuOption.pnlOption);
                 Console.WriteLine("soy un MenuOption. Label: " + ((MenuOption)objNode).Label);
             }
-            
+            // esconder el panel anterior
+            if (this.lastPnlVisited != null)
+            {
+                ((UserControl)this.lastPnlVisited).Hide();
+            }
+            if (mnutmp != null)
+            {
+                ((UserControl)mnutmp.pnlOption).Show();
+                this.lastPnlVisited = mnutmp.pnlOption;
+            }
+
+
+
         }
     }
 }

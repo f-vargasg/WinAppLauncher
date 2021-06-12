@@ -12,6 +12,17 @@ namespace AppLauncher.CommonUI
 {
     public partial class PnlMenuOption : UserControl
     {
+
+        public TextBox TxtId
+        {
+            get { return txtId; }
+        }
+
+        public TextBox TxtLabel
+        {
+            get { return txtLabel; }
+        }
+
         public PnlMenuOption()
         {
             InitializeComponent();

@@ -12,6 +12,32 @@ namespace AppLauncher.CommonUI
 {
     public partial class PnlItemOption : UserControl
     {
+        public TextBox TxtId
+        {
+            get { return this.txtId; }
+        }
+
+        public TextBox TxtLabel
+        {
+            get { return this.txtLabel; }
+        }
+
+        public TextBox TxtClass
+        {
+            get { return this.txtClass; }
+        }
+
+        public TextBox TxtAssemblyFile
+        {
+            get { return this.txtAssemblyFile; }
+        }
+
+        public TextBox TxtInvoker
+        {
+            get { return this.txtInvoker; }
+        }
+
+
         public PnlItemOption()
         {
             InitializeComponent();
