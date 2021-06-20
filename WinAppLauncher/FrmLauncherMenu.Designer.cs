@@ -104,8 +104,9 @@ namespace WinAppLauncher
             this.xmlTrv.Name = "xmlTrv";
             this.xmlTrv.Size = new System.Drawing.Size(252, 527);
             this.xmlTrv.TabIndex = 0;
+            this.xmlTrv.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.xmlTrv_AfterSelect);
             // 
-            // FrmBuildMenu
+            // FrmLauncherMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,7 +116,7 @@ namespace WinAppLauncher
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmBuildMenu";
+            this.Name = "FrmLauncherMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Build Menu";
             this.TreecntMnuStr.ResumeLayout(false);
