@@ -11,6 +11,7 @@ namespace AppLauncher.BL
         public string ClassName { get; set; }
         public string AssemblyFile { get; set; }
         public string Invoker { get; set; }
+        public object PnlOptionWork { get; set; }
 
         public ItemOption() : base()
         {

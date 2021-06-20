@@ -18,7 +18,7 @@ namespace WinAppLauncher
     public partial class FrmLauncherMenu : Form
     {
         TreeAppMenu treeAppMenu;
-        
+        int idLastVisited;
 
 
         public FrmLauncherMenu()
@@ -67,7 +67,7 @@ namespace WinAppLauncher
                     ItemOption itop = (ItemOption)tag;
                     Console.WriteLine("soy un ItemOption");
                     Console.WriteLine(tag.ToString());
-                    if (itop.ClassNameStr.CompareTo(string.Empty) != 0)
+                    if (itop.ClassName.CompareTo(string.Empty) != 0)
                     {
 
                         if (itop.IdNumeric == -1)  // no está creado el objeto
@@ -76,7 +76,7 @@ namespace WinAppLauncher
                             // Assembly assembly = Assembly.LoadFrom("GenMenuFrmUI.dll");
                             Assembly assembly = Assembly.LoadFrom(itop.AssemblyFile);
 
-                            frm = (Form)assembly.CreateInstance(itop.ClassNameStr);
+                            frm = (Form)assembly.CreateInstance(itop.ClassName);
                             frm.TopLevel = false;
                             itop.IdNumeric = splitContainer1.Panel2.Controls.Count;
                             splitContainer1.Panel2.Controls.Add(frm);
