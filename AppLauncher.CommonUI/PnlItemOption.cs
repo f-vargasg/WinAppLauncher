@@ -12,10 +12,13 @@ namespace AppLauncher.CommonUI
 {
     public partial class PnlItemOption : UserControl
     {
+
         public TextBox TxtId
         {
             get { return this.txtId; }
+            set { txtId = value; }
         }
+
 
         public TextBox TxtLabel
         {

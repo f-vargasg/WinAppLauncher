@@ -61,14 +61,24 @@ namespace WinAppLauncher
             {
                 ItemOption itemOption = (ItemOption)objNode;
                 if (this.pnlItemOption == null)  // no está creado el objeto
-                {
+                {    // cree el objeto
                     pnlItemOption = new PnlItemOption
                     {
                         BorderStyle = BorderStyle.None,
                         Dock = DockStyle.Fill
+
                     };
                     splitContainer1.Panel2.Controls.Add(pnlItemOption);
                 }
+                ItemOption item = (ItemOption)objNode;
+                pnlItemOption.TxtId.Text = item.IdMenu;
+                pnlItemOption.TxtLabel.Text = item.Label ;
+                pnlItemOption.TxtClass.Text = item.ClassName;
+                pnlItemOption.TxtAssemblyFile.Text = item.AssemblyFile;
+                pnlItemOption.TxtInvoker.Text = item.Invoker;
+
+
+                
                 pnlToShow = pnlItemOption;
 
                 Console.WriteLine("soy un ItemOption Label: " + ((ItemOption)objNode).Label);
