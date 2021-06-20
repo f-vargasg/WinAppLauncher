@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinAppLauncher
+namespace WinAppLauncherBuilder
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace WinAppLauncher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLauncherMenu());
+            Application.Run(new FrmBuilderMenuPrinc());
         }
     }
 }

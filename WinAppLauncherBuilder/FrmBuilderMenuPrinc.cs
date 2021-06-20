@@ -12,17 +12,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinAppLauncher
+namespace WinAppLauncherBuilder
 {
-    public partial class FrmBuildMenu : Form
+    public partial class FrmBuilderMenuPrinc : Form
     {
         TreeAppMenu treeAppMenu;
         PnlItemOption pnlItemOption;
         PnlMenuOption pnlMenuOption;
         object lastPnlVisited;
 
-
-        public FrmBuildMenu()
+        public FrmBuilderMenuPrinc()
         {
             InitializeComponent();
             InitMyComponents();
@@ -47,6 +46,11 @@ namespace WinAppLauncher
             }
         }
 
+        private void tlstrPrincMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
         private void ExitTlStrp_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -55,7 +59,6 @@ namespace WinAppLauncher
         private void xmlTrv_AfterSelect(object sender, TreeViewEventArgs e)
         {
             object objNode = e.Node.Tag;
-            MenuApp mnutmp = null;
             UserControl pnlToShow = null;
             if (objNode is ItemOption)
             {
@@ -72,13 +75,13 @@ namespace WinAppLauncher
                 }
                 ItemOption item = (ItemOption)objNode;
                 pnlItemOption.TxtId.Text = item.IdMenu;
-                pnlItemOption.TxtLabel.Text = item.Label ;
+                pnlItemOption.TxtLabel.Text = item.Label;
                 pnlItemOption.TxtClass.Text = item.ClassName;
                 pnlItemOption.TxtAssemblyFile.Text = item.AssemblyFile;
                 pnlItemOption.TxtInvoker.Text = item.Invoker;
 
 
-                
+
                 pnlToShow = pnlItemOption;
 
                 Console.WriteLine("soy un ItemOption Label: " + ((ItemOption)objNode).Label);
@@ -96,7 +99,8 @@ namespace WinAppLauncher
                     // menuOption.IdNumeric = splitContainer1.Panel2.Controls.Count;
                     splitContainer1.Panel2.Controls.Add(pnlMenuOption);
                 }
-                mnutmp = menuOption;
+                pnlMenuOption.TxtId.Text = menuOption.IdMenu;
+                pnlMenuOption.TxtLabel.Text = menuOption.Label;
                 pnlToShow = pnlMenuOption;
                 Console.WriteLine("soy un MenuOption. Label: " + ((MenuOption)objNode).Label);
             }
@@ -111,10 +115,6 @@ namespace WinAppLauncher
                 pnlToShow.Show();
             }
             this.lastPnlVisited = pnlToShow;
-
-
-
-
         }
     }
 }

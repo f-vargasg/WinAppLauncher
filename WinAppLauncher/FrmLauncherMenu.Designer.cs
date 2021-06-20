@@ -1,7 +1,7 @@
 ﻿
 namespace WinAppLauncher
 {
-    partial class FrmBuildMenu
+    partial class FrmLauncherMenu
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,7 +30,7 @@ namespace WinAppLauncher
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBuildMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLauncherMenu));
             this.TreecntMnuStr = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addNodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlstrPrincMenu = new System.Windows.Forms.ToolStrip();
@@ -104,7 +104,6 @@ namespace WinAppLauncher
             this.xmlTrv.Name = "xmlTrv";
             this.xmlTrv.Size = new System.Drawing.Size(252, 527);
             this.xmlTrv.TabIndex = 0;
-            this.xmlTrv.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.xmlTrv_AfterSelect);
             // 
             // FrmBuildMenu
             // 
@@ -115,7 +114,7 @@ namespace WinAppLauncher
             this.Controls.Add(this.tlstrPrincMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBuildMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Build Menu";
