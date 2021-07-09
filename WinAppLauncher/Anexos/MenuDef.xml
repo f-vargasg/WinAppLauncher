@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Definicion del xml para armar el menu -->
+<menuDef> 
+  <menu id ="menu0" label="Prueba menu de datos"> 
+    <menu id="menu1" label = "Utiles Sab.net1">
+      <item id="item2" label= "Generador de Codigo"  class="WinXmlToSqlInvoker.FrnPrincGenCall" assemblyFile="WinGenCallSps.dll"  invoker=""/> 
+      <item id="item3" label ="XML To Invoker" class="WinXmlToSqlInvoker.FrmPrincXmlInvoker" assemblyFile="WinXmlToSqlInvoker.dll" invoker=""/>
+      <item id="item4" label ="Metadata Utiles" class="WinUtiles.FrmPrincipal" assemblyFile="WinUtiles.dll" invoker=""/>
+      <item id="item5" label ="Catalogo de Servicios" class="WinManteCatalogoServ.FrmListCatalog" assemblyFile="WinManteCatalogoServ.dll" invoker=""/>
+      <item id="item5" label ="Metadata Utiles" class="WinManteCatalogoServ.FrmListCatalog" assemblyFile="WinManteCatalogoServ.dll" invoker=""/>
+      <item id="item5" label ="Catalogo Servicios" class="WinManteCatalogoServ.FrmListCatalog" assemblyFile="WinManteCatalogoServ.dll" invoker=""/>
+    </menu> 
+    </menu> 
+ </menuDef> 
