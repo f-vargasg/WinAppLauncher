@@ -90,5 +90,9 @@
       <Name>AppLauncher.CommonUI</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DefMenu\MenuDef.xml" />
+    <Content Include="DefMenu\NotasVarias.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

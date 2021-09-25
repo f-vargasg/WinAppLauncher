@@ -1,0 +1,3 @@
+﻿
+El archivo de configuración del menú se llama MenuDef.xml (viene la definición del xml)
+Los archivos dlls, tienen que estár en la misma carpeta donde está el tools Gen menu
