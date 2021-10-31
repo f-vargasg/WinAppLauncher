@@ -50,12 +50,12 @@ namespace WinAppLauncher
             this.TreecntMnuStr.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNodeToolStripMenuItem});
             this.TreecntMnuStr.Name = "TreecntMnuStr";
-            this.TreecntMnuStr.Size = new System.Drawing.Size(148, 28);
+            this.TreecntMnuStr.Size = new System.Drawing.Size(129, 26);
             // 
             // addNodeToolStripMenuItem
             // 
             this.addNodeToolStripMenuItem.Name = "addNodeToolStripMenuItem";
-            this.addNodeToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.addNodeToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.addNodeToolStripMenuItem.Text = "Add Node";
             // 
             // tlstrPrincMenu
@@ -76,7 +76,7 @@ namespace WinAppLauncher
             this.ExitTlStrp.Image = ((System.Drawing.Image)(resources.GetObject("ExitTlStrp.Image")));
             this.ExitTlStrp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExitTlStrp.Name = "ExitTlStrp";
-            this.ExitTlStrp.Size = new System.Drawing.Size(29, 24);
+            this.ExitTlStrp.Size = new System.Drawing.Size(24, 24);
             this.ExitTlStrp.Text = "toolStripButton1";
             this.ExitTlStrp.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.ExitTlStrp.ToolTipText = "Exit";
@@ -109,7 +109,7 @@ namespace WinAppLauncher
             // 
             // FrmLauncherMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.splitContainer1);
