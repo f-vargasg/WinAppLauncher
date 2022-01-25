@@ -94,6 +94,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Anexos\Leame.txt" />
     <Content Include="Anexos\MenuDef.xml" />
     <Content Include="Launcher.ico" />
     <Content Include="Launcherxcf.ico" />

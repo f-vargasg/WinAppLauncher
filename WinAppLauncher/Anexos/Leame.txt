@@ -1,0 +1,6 @@
+﻿Estructura de las apps 
+--------------------------
+
+-El primer boton debe ser el exit
+-Incluir en el config
+    <add key="hideExitButton" value="true"/>
