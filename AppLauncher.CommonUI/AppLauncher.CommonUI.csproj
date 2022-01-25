@@ -59,12 +59,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AppLauncher.BL\AppLauncher.BL.csproj">
-      <Project>{d4e5bc2f-a2c4-49fe-a6e5-407317e229f4}</Project>
-      <Name>AppLauncher.BL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="PnlItemOption.resx">
       <DependentUpon>PnlItemOption.cs</DependentUpon>
     </EmbeddedResource>
