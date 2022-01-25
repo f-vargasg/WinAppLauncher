@@ -1,5 +1,6 @@
-﻿using AppLauncher.BL;
-using AppLauncher.CommonUI;
+﻿
+using Launcher.BL;
+using Launcher.Common.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
